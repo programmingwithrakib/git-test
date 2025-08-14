@@ -1,24 +1,26 @@
 name: Say hello world workflow
 
-on: 
-  push:  
+on:
+  push:
 
-jobs: 
+jobs:
   say-hello:
-    runs-on: ubuntu-latest 
-    steps: 
-     - name: checkout actions
-       uses: actions/checkout@v2
-       with: 
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout repo
+       uses: actions/checkout@v3
+       with:
          token: ${{ secrets.GITHUB_TOKEN }}
-         fetch-depth: 0  
-     - name: say-hello 
-       run: mkdir test && cd test && touch file.txt 
-     - name: Commit Changes
-       run: | 
-        git config user.name "programmingwithrakib" 
-        git config user.email "programmingwithrakib@gmail.com" 
-        git add . 
-        git commit -m "Add test.txt from workflow" 
-        git push    
+         fetch-depth: 0
+     - name: Create file
+       run: |
+         mkdir -p abc
+         touch abc/test.txt
+     - name: Commit & Push changes
+       run: |
+         git config user.name "programmingwithrakib"
+         git config user.email "programmingwithrakib@gmail.com"
+         git add abc/test.txt
+         git commit -m "Add test.txt from workflow" || echo "No changes to commit"
+         git push
         
