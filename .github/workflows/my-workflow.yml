@@ -1,8 +1,9 @@
 name: Say hello world workflow
+
 on: 
   push:  
 
-job: 
+jobs: 
   say-hello:
     run-on: ubuntu-latest 
     steps: 
