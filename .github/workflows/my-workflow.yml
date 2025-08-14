@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
      - name: checkout actions
-       uses: actions/checkout@v2 
+       uses: actions/checkout@v2
+       with: 
+         token: ${{ secrets.GITHUB_TOKEN }}
+         fetch-depth: 0  
      - name: say-hello 
        run: mkdir test && cd test && touch file.txt 
      - name: Commit Changes
