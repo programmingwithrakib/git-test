@@ -1,6 +1,6 @@
 name: Say hello world workflow
 on: 
-  push 
+  push:  
 
 job: 
   say-hello:
