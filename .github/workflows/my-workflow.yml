@@ -10,5 +10,5 @@ jobs:
      - name: checkout actions
        uses: actions/checkout@v2 
      - name: say-hello 
-       run: echo "Hello World"  
+       run: mkdir abc && cd abc && touch test.txt  
         
