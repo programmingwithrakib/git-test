@@ -18,7 +18,7 @@ jobs:
        run: | 
         git config user.name "programmingwithrakib" 
         git config user.email "programmingwithrakib@gmail.com" 
-        git add abc/test.txt 
+        git add . 
         git commit -m "Add test.txt from workflow" 
         git push    
         
