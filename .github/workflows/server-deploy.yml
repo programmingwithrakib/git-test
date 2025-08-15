@@ -18,6 +18,12 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: | 
-            cd ~ && cd git-test
-            git pull origin main 
+            script: |
+              cd ~
+              if [ ! -d "git-test" ]; then
+                git clone https://github.com/programmingwithrakib/git-test.git
+              fi
+              cd git-test
+              git checkout main
+              git pull origin main 
 
