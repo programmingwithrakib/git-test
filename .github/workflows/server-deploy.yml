@@ -18,6 +18,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SERVER_SSH_KEY }}
           scripts: | 
-            cd ~ && cd get-test
+            cd ~ && cd git-test
             git pull origin main 
 

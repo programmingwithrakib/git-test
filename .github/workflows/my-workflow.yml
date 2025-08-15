@@ -12,15 +12,10 @@ jobs:
        with:
          token: ${{ secrets.PAT_TOKEN }}
          fetch-depth: 0
-     - name: Create file
-       run: |
-         mkdir -p abc
-         touch abc/test.txt
+
      - name: Commit & Push changes
        run: |
          git config user.name "programmingwithrakib"
          git config user.email "programmingwithrakib@gmail.com"
-         git add .
-         git commit -m "Add test.txt from workflow" || echo "No changes to commit"
-         git push origin main
+      
         
