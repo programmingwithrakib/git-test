@@ -1,4 +1,5 @@
 name: Server Deploy
+on: 
   push:
       branches:
         - main 
